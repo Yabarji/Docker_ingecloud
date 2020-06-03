@@ -30,6 +30,9 @@ docker images
 ### -i : interactif
 ```docker run -it debian:jessie /bin/bash```
 
+# Creer et demarrer un container en lui specifiant une commande (date) 
+```docker run debian:jessie date```
+
 # Lister les containers actif 
 ```docker ps```
 
