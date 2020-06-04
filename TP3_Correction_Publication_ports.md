@@ -3,7 +3,7 @@
 #### Correction de l'exercice 1
 1. La commande suivante permet de lancer le container basé sur nginx et d'exposer le port 80 de ce container sur le port 8080 de la machine hôte :
 
-```docker container run -d -p 8080:80 nginx```
+```$ docker container run -d -p 8080:80 nginx```
 
 2. La page index.html servie par défaut par nginx est accessible sur le port 8080
 > http://localhost:8080
@@ -38,7 +38,7 @@ Status: Downloaded newer image for nginx:1.14
 
 2. L'inspection d'un container se fait à l'aide de la commande :
 
-```docker inspect CONTAINER_ID```
+```$ docker inspect CONTAINER_ID```
 >Note: il est possible de n'utiliser que les permiers caractères de l'identifiant, ou bien le nom du
 container si celui-ci à été précisé avec l'option --name lors de la création.
 
