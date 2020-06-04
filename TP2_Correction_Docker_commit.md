@@ -1,24 +1,17 @@
-# TP Correction Docker commit
+# TP2 Correction Docker commit
 
 ## Création d’une image à partir d’un container
-### Enoncé
-1. Lancez une container basé sur une image alpine:3.8, en mode interactif, et en lui donnant
-le nom c1
-2. Lancez la commande curl google.com
-Qu'observez-vous ?
-3. Installez curl à l’aide du gestionnaire de package apk
-4. Quittez le container avec CTRL-P/Q (pour ne pas killer le processus de PID 1)
-5. Créez une image, nommée myping, à partir du container c1
-Utilisez pour cela la commande commit (docker commit --help pour voir le fonctionnment de
-cette commande)
-6. Lancez un shell intéractif dans un container basée sur l’image myping et vérifiez que curl est présent.
 
 ### Correction
 1. La commande suivante permet de créé le container demandé
 On utilise l'option --name pour spécifier le nom du container.
+
 ```$ docker container run -ti --name c1 alpine:3.8```
+
 Suite à cette commande, on se retrouve dans un shell sh dans le container.
+
 2. L'utilitaire curl n'est pas disponible dans une image alpine, il faut l'installer.
+
 ```
 / # curl google.com
 /bin/sh: curl: not found
@@ -60,8 +53,8 @@ Depuis ce shell, nous pouvons relancer la commande de la question 2.
 The document has moved<A HREF="http://www.google.fr/?
 gfe_rd=cr&dcr=0&ei=cPXFWsz_N4zUXoGQgrAL">here</A>.
 </BODY></HTML>
-Pour résumer
 ```
+> Pour résumer :
 Nous avons donc lancé un container, ajouté un binaire dans ce container et commité le tout en
 une nouvelle image. Le binaire est donc présent dans cette image. Commiter un container
 pour créer une image n'est pas l'approche recommandée. 
