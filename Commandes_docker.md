@@ -44,3 +44,18 @@ docker images
 
 # Stopper un container
 ```docker stop [ID|NOM]```
+
+### Visualiser les Logs d'un container à l'état RUNNING :
+```
+$ docker logs ID
+$ docker logs -f ID
+```
+
+### Demarrer un container en background : detaché
+```$ docker run -d -it debian:jessie```
+
+### Utilisation des ID pour stop & remove 
+```$ docker stop $(docker ps -q) && docker rm $(docker ps -aq)```
+
+### Prune 
+```$ docker container prune```
