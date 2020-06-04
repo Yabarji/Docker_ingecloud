@@ -59,3 +59,8 @@ $ docker logs -f ID
 
 ### Prune 
 ```$ docker container prune```
+
+### Sortir d'un conteneur sans tuer son processus
+> Sinon on stoppe le conteneur
+
+```CTRL+P+Q```
