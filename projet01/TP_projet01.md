@@ -20,3 +20,13 @@ $ sudo docker container run -d --name app_web -v ${PWD}/www/:/usr/share/nginx/ht
 
 ## Test URL
 > http://dockerweb:8082
+
+
+## Démarrage d'un troisieme conteneur mariadb
+
+```
+$ sudo docker container run -d --network dockerweb --name app_bdd -e MYSQL_ROOT_PASSWORD=roottoor44 mariadb:10.4
+```
+
+## Modification du fichier index.php pour interroger la base du conteneur nommé "app_bdd"
+
