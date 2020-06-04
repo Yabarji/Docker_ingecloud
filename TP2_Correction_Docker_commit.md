@@ -19,7 +19,7 @@ Suite à cette commande, on se retrouve dans un shell sh dans le container.
 3. La commande suivante permet de mettre à jour la liste des packages et d'installer
 l'utilitaire curl:
 ```
-/ # apk update && apk add curl
+/ # **apk update && apk add curl**
 fetch http://dl-cdn.alpinelinux.org/alpine/v3.8/main/x86_64/APKINDEX.tar.gz
 fetch http://dl-cdn.alpinelinux.org/alpine/v3.8/community/x86_64/APKINDEX.tar.gz
 v3.8.2-13-g106f36ecbb [http://dl-cdn.alpinelinux.org/alpine/v3.8/main]
