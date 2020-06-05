@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app_web:
+    image: nginx:1.18
+    volumes:
+      - ./conf/:/etc/nginx/conf.d/:ro # Mappage volume avec option ro (read-only) dans le conteneur
+      - ./www/:/usr/share/nginx/html/
+    ports:
+      - 8085:80
+    networks:
+      - frontweb
+    depends_on:
+      - app_php
+
+  app_php:
+    image: php-mysql:1.0 
+    volumes:
+      - ./www/:/srv/http/
+    networks:
+      - frontweb
+      - backweb
+    depends_on:
+      - app_bdd
+
+  app_bdd:
+    image: mariadb:10.4
+    environment:
+      - MYSQL_ROOT_PASSWORD=roottoor44
+    networks:
+      - backweb
+
+networks:
+  frontweb:
+  backweb:
