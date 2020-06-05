@@ -1,4 +1,4 @@
-version: '3.8'
+version: '2.4'
 
 services:
   app_web:
@@ -22,14 +22,28 @@ services:
       - backweb
     depends_on:
       - app_bdd
+    cpus: 0.5
+    mem_limit: 256m
 
   app_bdd:
     image: mariadb:10.4
     environment:
       - MYSQL_ROOT_PASSWORD=roottoor44
     networks:
-      - backweb
+      backweb:
+        ipv4_address: 172.16.128.20
+    mem_limit: 512m
 
 networks:
   frontweb:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.9.0/24
   backweb:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.128.0/24
