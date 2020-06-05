@@ -14,5 +14,9 @@ WORKDIR /app
 # Directive RUN : executer des commandes de type shell
 RUN pip install -r requirements.txt
 
-# Directive CMD : commande par défaut executee à la fin (donc une fois un conteneur RUNNING)
-CMD ["python","app.py"]  
+# Directive ENTRYPOINT : permet de definir la commande a executer au demarrage du conteneur /!\ Celle-ci ne pourra pas être surchage
+ENTRYPOINT ["python"]
+
+# Directive CMD : commande par défaut executee à la fin (donc une fois un conteneur RUNNING) ou argument de ENTRYPOINT
+# CMD peut être surchargée au démarrage d'un conteneur
+CMD ["app.py"]  
