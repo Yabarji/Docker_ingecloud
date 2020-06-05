@@ -12,6 +12,11 @@ services:
       - frontweb
     depends_on:
       - app_php
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://app_web"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
 
   app_php:
     image: php-mysql:1.0 
