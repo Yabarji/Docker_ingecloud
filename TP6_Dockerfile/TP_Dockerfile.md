@@ -12,5 +12,5 @@ $ cd projet
 
 ## Build de l'image à partir du Dockerfile
 ```
-$ docker image built -t mon_image:1.0 .
+$ docker image build -t mon_image:1.0 .
 ```
